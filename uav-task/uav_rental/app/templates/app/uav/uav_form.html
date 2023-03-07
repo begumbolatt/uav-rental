@@ -1,0 +1,20 @@
+{% extends "app/uav/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<form action="" method="post" autocomplete="off">
+    {% csrf_token %}
+    {{form.brand|as_crispy_field}}
+    {{form.model|as_crispy_field}}
+    <div class="row">
+        <div class="col-md-4">
+            {{form.weigth|as_crispy_field}}
+        </div>
+        <div class="col-md-8">
+            {{form.category|as_crispy_field}}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success"><i class="fa-solid fa-database"></i> Submit</button>
+</form>
+{% endblock content %}
